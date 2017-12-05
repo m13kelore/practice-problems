@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 0 | random number or array element</title>
+
+    <script>
+
+        function random_range(start_num, end_num){
+            if(start_num === typeof Array){
+
+                randomIndex = [Math.floor(Math.random() * start_num.length)];
+                return start_num[randomIndex];
+
+            }else{
+
+                arrStart = start_num;
+                arrEnd = end_num;
+                arr = [];
+
+                while(arrStart <= arrEnd){
+                    arr.push(arrStart++);
+                }
+
+                var i = Math.floor(Math.random() * arr.length);
+                return arr[i];
+
+            }
+
+
+        }
+
+        console.log('test 1: ' + random_range(1, 100));
+        console.log('test 2: ' + random_range(5, 27));
+        console.log('test 3: ' + random_range(['A','B','C','D','E','F','L']));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
