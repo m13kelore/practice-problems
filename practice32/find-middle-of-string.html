@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 0 | find middle of string</title>
+
+    <script>
+
+        function find_middle_letters(string){
+
+            var wordArray = [];
+            var middleLetter;
+
+            for(var wordIndex = 0; wordIndex < string.length; wordIndex++) {
+                wordArray.push(string[wordIndex]);
+
+                if (string.length % 2 === 0) {
+                    middleLetter = wordArray[(string.length / 2) - 1] + wordArray[string.length / 2];
+                } else {
+                    middleLetter = wordArray[Math.floor(string.length / 2)];
+                }
+
+            }
+
+            return middleLetter;
+
+        }
+
+        console.log('\'Hello\' (odd number of characters) result is: ', find_middle_letters('hello'));
+        console.log('\'four\' (even number of characters) result is: ', find_middle_letters('four'));
+        console.log('\'mouse\' (odd number of characters) result is: ', find_middle_letters('mouse'));
+        console.log('\'Kelcey\' (even number of characters) result is: ', find_middle_letters('kelcey'));
+        console.log('\'zzzMzzz\' (odd number of characters) result is: ', find_middle_letters('zzzMzzz'));
+
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
