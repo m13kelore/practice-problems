@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 0 | alternate caps</title>
+
+    <script>
+
+        function capitalizeLetters(string){
+            var newWord = "";
+
+            for(var letterIndex = 0; letterIndex < string.length; letterIndex++){
+                if(letterIndex % 2 !== 0){
+                    newWord += string[letterIndex].toUpperCase();
+                }else{
+                    newWord += string[letterIndex];
+                }
+            }
+
+            return newWord;
+
+        }
+
+        console.log('Test 1 result: ', capitalizeLetters('centigrade'));
+        console.log('Test 2 result: ', capitalizeLetters('hawaii'));
+        console.log('Test 3 result: ', capitalizeLetters('sea cream jasmine'));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
