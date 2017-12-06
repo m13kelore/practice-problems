@@ -1,0 +1,39 @@
+<!DOCTYPE html >
+
+<html>
+
+<head>
+
+    <title>Level 0 | Find the vowels</title>
+
+    <script>
+
+        function find_vowels(string){
+            var vowelRef = ['a', 'e', 'i', 'o', 'u'];
+            var vowelOutput = "";
+
+            for(var letterIndex = 0; letterIndex < string.length; letterIndex++){
+
+                for(var vowelCheck = 0; vowelCheck < vowelRef.length; vowelCheck++){
+
+                    if(string[letterIndex] === vowelRef[vowelCheck]){
+                        vowelOutput += string[letterIndex];
+                    }
+
+                }
+
+            }
+
+            return vowelOutput;
+
+        }
+
+        console.log('Function Test 1: ', find_vowels("try this one")); //expected answer: "ioe"
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
