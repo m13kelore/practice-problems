@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Class Practice Problem 01 | E-Mail</title>
+
+    <script>
+
+        function obscureEmail (input){
+            var newEmailAddress = "";
+
+            newEmailAddress+=input[0];
+            newEmailAddress+='...';
+
+            for(var emailIndex = 1; emailIndex < input.length; emailIndex++){
+                var charCode = input.charCodeAt(emailIndex);
+
+                if(charCode === 64){
+                    newEmailAddress+=input[emailIndex];
+
+                    for(var secondaryIndex = emailIndex + 1; secondaryIndex < input.length; secondaryIndex++){
+                        newEmailAddress+=input[secondaryIndex];
+                    }
+                }
+            }
+
+            return newEmailAddress;
+        }
+
+        console.log('kelceylorenzo@gmail.com test: ', obscureEmail('kelceylorenzo@gmail.com'));
+        console.log('some.guy@learningfuze.com test: ', obscureEmail('some.guy@learningfuze.com'));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>

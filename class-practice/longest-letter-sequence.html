@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Class Practice Problem 2 | Find the longest increasing sequence of letters</title>
+
+    <script>
+
+//        function findLongest(sequence){
+//            var arrayOfIncreases = [];
+//            var currentStreak = "";
+//            var currentLetter = sequence[0];
+//
+//            for(var letter = 1; letter < sequence.length; letter++){
+//
+//                if(sequence[letter].charCodeAt() > currentLetter.charCodeAt()){
+//                    currentStreak += currentLetter;
+//                    currentLetter = sequence[letter];
+//                }else{
+//                    currentStreak += currentLetter;
+//                    arrayOfIncreases.push(currentStreak);
+//                    currentLetter = sequence[letter];
+//                    currentStreak = "";
+//                }
+//            }
+//
+//            var longestSequence = arrayOfIncreases[0];
+//
+//            for(var compareIndex = 1; compareIndex < arrayOfIncreases.length; compareIndex++){
+//                if(arrayOfIncreases[compareIndex].length > longestSequence.length){
+//                    longestSequence = arrayOfIncreases[compareIndex];
+//                }
+//
+//            }
+//
+//            return longestSequence;
+//
+//        }
+
+
+        function findLongest(sequence){
+            var longestStreak = "";
+            var currentStreak = "";
+            var currentLetter = sequence[0];
+
+            for(var letter = 1; letter < sequence.length; letter++){
+
+                if(sequence[letter].charCodeAt() > currentLetter.charCodeAt()){
+                    currentStreak += currentLetter;
+                    currentLetter = sequence[letter];
+                }
+                else{
+                    currentStreak += currentLetter;
+                    longestStreak += currentStreak;
+                    if(longestStreak.length < currentStreak.length){
+                        longestStreak = currentStreak;
+                    }
+                    currentLetter = sequence[letter];
+                    currentStreak = "";
+                }
+            }
+            return longestStreak;
+
+        }
+
+        console.log('Test 1: ', findLongest('abcdecklmnopwr')); //Expected result: cklmnopw
+        console.log('Test 2: ', findLongest('abcdefghijklxdghjlqr')); //Expected result: abcdefghijklx
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
