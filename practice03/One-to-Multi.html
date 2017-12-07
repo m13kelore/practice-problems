@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 1|One to Multi</title>
+
+    <script>
+
+        function groupArray(array){
+            var multiArray = [];
+            var numberArray = [];
+            var booleanArray = [];
+            var stringArray = [];
+            var otherArray = [];
+
+            for(var index = 0; index < array.length; index++){
+                if(typeof array[index] === 'number'){
+                    numberArray.push(array[index]);
+                } else if(typeof array[index] === 'boolean'){
+                    booleanArray.push(array[index]);
+                } else if(typeof array[index] === 'string'){
+                    stringArray.push(array[index]);
+                } else{
+                    otherArray.push(array[index]);
+                }
+            }
+
+            multiArray.push(numberArray, booleanArray, stringArray, otherArray);
+
+            return multiArray;
+
+        }
+
+        console.log ('Test 1: ', groupArray(['red panda', 27, 'fox', true, 'baymax', 14, false, null ]))
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
