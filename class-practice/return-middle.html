@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Return Middle</title>
+
+    <script>
+
+        function returnMiddle(para){
+
+            para.sort(function(a,b){return a-b});
+
+            if(para.length % 2 === 1){
+                return para[Math.floor(para.length/2)];
+            } else if (para.length % 2 === 0){
+                return para[para.length/2] + ', ' + para[para.length/2 + 1];
+            }
+        }
+
+        console.log('test 1: ', returnMiddle([1,7,10,4,0,3]));
+        console.log('test 2: ', returnMiddle([12,20,35,22,18,3,8]));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Capitalize</title>
+
+    <script>
+
+        function reverseCapitalize(string){
+            var newString = "";
+
+            for(var index = 0; index < string.length; index++){
+
+                if(string[index] === string[index].toUpperCase()) {
+                    newString += string[index].toLowerCase();
+                } else if (string[index] === string[index].toLowerCase()){
+                    newString += string[index].toUpperCase();
+                }
+            }
+
+            return newString;
+        }
+
+        console.log('Test 1: ' + reverseCapitalize('Hello There'));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
