@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flatten</title>
+
+    <script>
+
+        var array = [1, [2], [3,[[4]]], [5,6]];
+
+        function flatten(array){
+            debugger;
+            var output = [];
+                for(var index = 0; index < array.length; index++){
+                    if(!Array.isArray(array[index])) {
+                        output.push(array[index]);
+
+                    }else{
+                        var nested = flatten(array[index]);
+
+                        array.push(nested);
+                    }
+                }
+
+            return output;
+
+        }
+
+        console.log('Test: ' + flatten(array));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

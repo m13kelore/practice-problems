@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 4|Numeric Toggles</title>
+
+    <script>
+        function numeric_toggles(input){
+            var output = [];
+
+            for(var index = 2; index < 6; index++){
+                var multiplier = index;
+                if(multiplier % 2 === 1){
+                    multiplier = -(multiplier);
+                }
+                output.push(input * multiplier);
+                input++;
+                output.push(input*multiplier);
+            }
+
+            return output;
+        }
+
+        console.log(numeric_toggles(2));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>

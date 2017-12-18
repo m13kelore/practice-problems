@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 1|Total Reverse</title>
+
+    <script>
+        function totalReverse(array){
+            var reversedArray = [];
+
+            for(var index = array.length; index >=0; index--){
+                reversedArray.push(array[index]);
+            }
+
+            return reversedArray;
+        }
+
+        console.log('Test 1 result: ', totalReverse(['volleyball', 'sketchbook', 'Christmas tree', 'fan', 'puzzle']));
+        console.log('Test 2 result: ', totalReverse([13, 7, 4, 15, 11]));
+        console.log('Test 3 result: ', totalReverse([13, 'volleyball', 'puzzle', 15, 11]));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
