@@ -15,7 +15,7 @@
 
             for(var index = 0; index < array.length; index++){
 
-                if(evens.indexOf(array[index]) === -1 || odds.indexOf(array[index]) === -1){
+                if(evens.indexOf(array[index]) === -1 && odds.indexOf(array[index]) === -1){
                     if(!isNaN(array[index]) && parseInt(array[index]) % 2 === 0){
                         evens.push(array[index]);
                     }else if(!isNaN(array[index]) && parseInt(array[index]) % 2 !== 0){
