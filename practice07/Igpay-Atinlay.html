@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 2 | Igpay Atinlay</title>
+
+    <script>
+
+        function pigLatin(string){
+            var split = string.toLowerCase().split(" ");
+
+            for(var index = 0; index < split.length; index++){
+                var firstLetter;
+                var word;
+
+                if(split[index].indexOf('a'||'e'||'i'||'o'||'u') === 0){
+                    split[index].concat('ay');
+                    return;
+                }else if(split[index.indexOf('a'||'e'||'i'||'o'||'u') !== 1]){
+                    firstLetter = split[index].slice(0,2);
+                    word = split[index].slice(2);
+                }else{
+                    firstLetter = split[index].slice(0,1);
+                    word = split[index].slice(1);
+                }
+                split[index]= word.concat(firstLetter, 'ay');
+            }
+
+            return split.join(' ');
+        }
+
+        var test = "Hello there";
+        var test2 = "latin";
+        var test3 = "cheers";
+        var test4 = "every";
+
+        console.log('Test: ' + pigLatin(test));
+        console.log('Test: ' + pigLatin(test2));
+        console.log('Test: ' + pigLatin(test3));
+        console.log('Test: ' + pigLatin(test4));
+
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>

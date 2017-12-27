@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 2| Even Odds</title>
+
+    <script>
+
+        function sortEvenOdds(array){
+            var evens = [];
+            var odds = [];
+            var output = {};
+
+            for(var index = 0; index < array.length; index++){
+
+                if(evens.indexOf(array[index]) === -1 || odds.indexOf(array[index]) === -1){
+                    if(!isNaN(array[index]) && parseInt(array[index]) % 2 === 0){
+                        evens.push(array[index]);
+                    }else if(!isNaN(array[index]) && parseInt(array[index]) % 2 !== 0){
+                        odds.push(array[index]);
+                    }
+                }
+            }
+
+            return output = {
+                odd: odds,
+                even: evens}
+        }
+
+        console.log(sortEvenOdds([7, 18, 42, 5, 18, 30, 43, 0,'corgi', 100, 89, 7, 21, 42, 4]));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>

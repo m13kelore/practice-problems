@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 5| Permutations</title>
+
+    <script>
+
+        function permutations(string){
+            var output = [];
+
+            for(var index = 0; index < string.length; index++){
+                var current1 = string[index];
+                var current2 = string[index];
+                debugger;
+                string = string.slice(index,index);
+
+                for(var inner1 = 0; inner1 < string.length; inner1++){
+                    current1 += string[inner1];
+                }
+
+                for(var inner2 = string.length - 1; inner2 >= 0; inner2--){
+                    current2 += string[inner2];
+                }
+                output.push(current1, current2);
+            }
+            return output;
+        }
+
+        console.log(permutations('abc'));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>

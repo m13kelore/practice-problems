@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function pancakeSort(array){
+
+            var flippedArray = array.slice();
+            var tempArray = [];
+
+            for(var counter = 0; counter < array.length; counter++){
+
+                var flipIndex;
+                var largestValue = flippedArray[counter];
+
+                for(var index = counter; index < flippedArray.length; index++){
+
+                    if(flippedArray[index] > largestValue){
+                        largestValue = flippedArray[index];
+                    }
+
+                    flipIndex = flippedArray.indexOf(largestValue);
+                }
+
+debugger;
+                tempArray = flippedArray.splice(0, flipIndex);
+                tempArray = tempArray.concat(flippedArray.reverse());
+
+                flippedArray = tempArray.splice(0,counter);
+                flippedArray = flippedArray.concat(tempArray.reverse());
+                console.log(flippedArray);
+
+            }
+
+            return flippedArray;
+        }
+
+        var array = [3, 6, 3, 2, 5, 7, 4];
+        console.log(pancakeSort(array));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

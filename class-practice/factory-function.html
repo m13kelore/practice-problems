@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+        function RedPanda(name){
+            this.name = name || 'pancake';
+            this.activity = 'be adorable';
+            this.getName = function(){
+                return this.name;
+            };
+            this.action = function(){
+                return this.activity;
+            }
+        }
+
+        RedPanda.prototype.changeActivity = function(newActivity){
+            return this.activity = newActivity || 'eat apples';
+
+        };
+
+        var pancake = new RedPanda();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
