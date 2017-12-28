@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 2 | Math Computation Sequences</title>
+
+    <script>
+
+        //pass each input through math computation for +, -, *, /
+        //return the computation and return value in string
+        //push string into final array
+
+        function math_sequence(num1, num2){
+            var signs = ['+', '-', '*', "/"];
+            var output = [];
+            for(var operator = 0; operator < signs.length; operator++){
+                var answer;
+                var sequence = '';
+                switch(signs[operator]){
+                    case '+':
+                        answer = num1 + num2;
+                        sequence = num1 + '+' + num2 + '=' + answer;
+                        break;
+                    case '-':
+                        answer = num1 - num2;
+                        sequence = num1 + '-' + num2 + '=' + answer;
+                        break;
+                    case '*':
+                        answer = num1 * num2;
+                        sequence = num1 + '*' + num2 + '=' + answer;
+                        break;
+                    case '/':
+                        answer = num1 / num2;
+                        sequence = num1 + '/' + num2 + '=' + answer;
+                        break;
+                }
+                output.push(sequence);
+            }
+            return output;
+        }
+
+        console.log(math_sequence(2,5));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
