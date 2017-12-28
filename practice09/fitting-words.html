@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 2 | Fitting Words</title>
+
+    <script>
+
+        //compare each letter to letters in word from array
+        //if all letters are present in word from array, add that word to the output
+        //if all letters are not present, move on to next word
+
+        function fittingWords(string, array){
+            var splitString = string.split('');
+            var output = [];
+
+            for(var index = 0; index < array.length; index++){
+                for(var inner = 0; inner < splitString.length; inner){
+                    if(array[index].indexOf(splitString[inner]) !== -1){
+                        inner++;
+                    } else{
+                        break;
+                    }
+
+                    if(inner === splitString.length -1){
+                        output.push(array[index]);
+                    }
+
+                }
+
+            }
+            return output;
+        }
+
+        var myArray = ['cat','caterpillar','whale','accurate','smile','cactus','cute'];
+
+        console.log('Test: ' +  fittingWords('cat', myArray));
+
+
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
