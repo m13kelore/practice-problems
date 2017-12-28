@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Level 2 | Skippy Numbers</title>
+
+    <script>
+
+        //run the index^2
+        //push numbers into the output in the following pattern: index+input, previous+1; index === previous, index+input, previous+1 ....
+        //return output as an array
+
+        function skippy_numbers(input){
+            var output = [];
+            var currentNumber = 0;
+            for(var index = 0; index < input*2; index++){
+                currentNumber += input;
+                output.push(currentNumber);
+                currentNumber += 1;
+                output.push( currentNumber);
+            }
+
+            return output;
+
+        }
+
+        console.log(skippy_numbers(2));
+
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
