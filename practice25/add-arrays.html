@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level 2 | Add Arrays</title>
+    <script>
+        function add_arrays(firstArray, needleArray){
+            var output = [];
+            for(var index = 0; index < firstArray.length; index++){
+                output.push(firstArray[index] + needleArray[index]);
+            }
+            return output;
+        }
+
+        var first_array = [3,-5,15,4];
+        var second_array = [3,18,-5,-4];
+
+        console.log(add_arrays(first_array, second_array));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
