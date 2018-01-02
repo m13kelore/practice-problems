@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level 3 | array factors</title>
+    <script>
+        function arrayFactors(array){
+
+            var output = {};
+            for(var index = 0; index < array.length; index ++){
+                var keys = Object.keys(output);
+                if(keys.indexOf(array[index]) === -1){
+                    var newKey = [];
+
+                    for(var factor = 0; factor < array.length; factor++){
+                        if(array[factor] !== array[index] && newKey.indexOf(array[factor]) === -1 && array[index] % array[factor] === 0){
+                            newKey.push(array[factor]);
+                        }
+                    }
+
+                    output[array[index]] = newKey;
+                }
+            }
+
+            return output;
+        }
+
+        console.log(arrayFactors([4,2,8,6,3,9,2,12]));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
