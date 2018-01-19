@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Closure Practice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            overflow: hidden
+        }
+
+        .movieDiv {
+            height: 35vmin;
+            width: 30vmin;
+            font-size: 4vmin;
+            float: left;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .infoDiv {
+            height: 100vh;
+            width: 100vmin;
+            font-size: 4vmin;
+            color: black;
+            z-index: 5;
+            float: left;
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            renderMovies(movies);
+        })
+
+        var movies = [
+            { name: 'Laputa: Castle in the Sky', releaseYear: 1986, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/4/40/Castle_in_the_Sky_%28Movie_Poster%29.jpg' },
+            { name: 'My Neighbor Totoro', releaseYear: 1988, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/0/02/My_Neighbor_Totoro_-_Tonari_no_Totoro_%28Movie_Poster%29.jpg' },
+            { name: 'Kiki\'s Delivery Service', releaseYear: 1989, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/0/07/Kiki%27s_Delivery_Service_%28Movie%29.jpg' },
+            { name: 'Porco Rosso', releaseYear: 1992, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Porco_Rosso_%28Movie_Poster%29.jpg/220px-Porco_Rosso_%28Movie_Poster%29.jpg' },
+            { name: 'Princess Mononoke', releaseYear: 1997, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Princess_Mononoke_Japanese_Poster_%28Movie%29.jpg/220px-Princess_Mononoke_Japanese_Poster_%28Movie%29.jpg' },
+            { name: 'Spirited Away', releaseYear: 2001, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Spirited_Away_poster.JPG/220px-Spirited_Away_poster.JPG' },
+            { name: 'The Cat Returns', releaseYear: 2002, director: 'Hiroyuki Morita', poster: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Cat_Returns.jpg/220px-Cat_Returns.jpg' },
+            { name: 'Howl\'s Moving Castle', releaseYear: 2004, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/a/a0/Howls-moving-castleposter.jpg' },
+            { name: 'Ponyo', releaseYear: 2008, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Ponyo%27s_Japanese_poster.jpg/220px-Ponyo%27s_Japanese_poster.jpg' },
+            { name: 'The Wind Rises', releaseYear: 2013, director: 'Hayao Miyazaki', poster: 'https://upload.wikimedia.org/wikipedia/en/a/a3/Kaze_Tachinu_poster.jpg' },
+        ];
+
+        function renderMovies(movieArray) {
+            for (var movieIndex = 0; movieIndex < movieArray.length; movieIndex++) {
+
+                (function () {
+                    var currentMovie = movieArray[movieIndex];
+                    var movieDiv = $('<div>', {
+                        'class': 'movieDiv',
+                        css: {
+                            backgroundImage: `url(${currentMovie.poster})`
+                        },
+                        on: {
+                            click: function () {
+                                $('.infoDiv').remove();
+                                console.log(this);
+                                var infoDiv = $('<div>', {
+                                    'class': 'infoDiv',
+                                });
+                                var movieTitle = $('<h3>', {
+                                    'class': 'movieTitle',
+                                    text: currentMovie.name
+                                });
+                                var releaseYear = $('<div>', {
+                                    'class': 'releaseYear',
+                                    text: 'Release Year: ' + currentMovie.releaseYear,
+                                });
+                                var movieDirector = $('<div>', {
+                                    'class': 'movieDirector',
+                                    text: 'Director: ' + currentMovie.director,
+                                });
+
+                                infoDiv.append(movieTitle, releaseYear, movieDirector);
+                                $('body').append(infoDiv);
+
+                            }
+                        }
+
+                    })
+                    $('body').append(movieDiv);
+                })()
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

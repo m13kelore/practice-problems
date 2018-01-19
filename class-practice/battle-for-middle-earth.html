@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practice Problem | Battle for Middle Earth</title>
+
+    <script>
+
+        function battle(evil, good) {
+            
+            var evilPoints = [1, 2, 2, 2, 3, 5, 10];
+            var goodPoints = [1, 2, 3, 3, 4, 10];
+            var evilTotal = null;
+            var goodTotal = null;
+
+            var evilArr = evil.split(" ");
+            var goodArr = good.split(" ");
+
+            for (var e = 0; e < evilArr.length; e++) {
+                evilTotal = evilTotal + evilArr[e] * evilPoints[e];
+            }
+
+            for (var g = 0; g < goodArr.length; g++) {
+                goodTotal = goodTotal + goodArr[g] * goodPoints[g];
+            }
+
+            if (evilTotal > goodTotal) {
+                return 'Evil has laid waste to the troops of good';
+            } else if (goodTotal > evilTotal) {
+                return 'Good wins';
+            } else {
+                return 'draw';
+            }
+        }
+
+        console.log(battle('1 3 4 1 2 1 1', '4 2 1 1 1 1'));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
