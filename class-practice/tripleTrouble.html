@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Triple Trouble</title>
+
+    <script>
+        function tripleTrouble(num1, num2) {
+
+            num1 = num1.toString();
+            num2 = num2.toString();
+            var counter = 1;
+            var triple = [];
+
+            for (var num1Index = 0; num1Index < num1.length; num1Index++) {
+                if (num1[num1Index] === num1[num1Index + 1]) {
+                    counter++;
+                } else {
+                    counter = 1;
+                }
+
+                if (counter === 3) {
+                    triple.push(`${num1[num1Index]}${num1[num1Index]}`);
+                    counter = 1;
+                }
+            }
+
+            if (triple.length === 0) {
+                return false;
+            }
+
+            for (var tripleIndex = 0; tripleIndex < triple.length; tripleIndex++) {
+                if (num2.indexOf(triple[tripleIndex]) !== -1) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        console.log(tripleTrouble(111144395290000111, 23824577219340283))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

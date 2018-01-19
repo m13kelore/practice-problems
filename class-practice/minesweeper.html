@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minesweeper</title>
+
+    <script>
+
+        function minesweeper(inputArr) {
+            //Version 1: 
+            //     let output = [];
+            //     for (let index = 0; index < inputArr.length; index++) {
+            //         output.push(new Array(inputArr.length).fill(0));
+            //     }
+            //     for (let outer = 0; outer < inputArr.length; outer++) {
+            //         for (let inner = 0; inner < inputArr[outer].length; inner++) {
+            //             if (inputArr[outer][inner] === 'true') {
+            //                 if (inner !== 0) {
+            //                     output[outer][inner - 1]++;
+            //                 }
+            //                 if (inner !== inputArr[outer].length - 1) {
+            //                     output[outer][inner + 1]++;
+            //                 }
+            //                 if (outer !== 0) {
+            //                     output[outer - 1][inner]++;
+            //                 }
+            //                 if (outer !== inputArr.length - 1) {
+            //                     output[outer + 1][inner]++;
+            //                 }
+            //                 if (inner !== 0 && outer !== 0) {
+            //                     output[outer - 1][inner - 1]++;
+            //                 }
+            //                 if (inner !== inputArr[outer].length - 1 && outer !== 0) {
+            //                     output[outer - 1][inner + 1]++;
+            //                 }
+            //                 if (inner !== 0 && outer !== inputArr.length - 1) {
+            //                     output[outer + 1][inner - 1]++;
+            //                 }
+            //                 if (inner !== inputArr[outer].length - 1 && outer !== inputArr.length - 1) {
+            //                     output[outer + 1][inner + 1]++;
+            //                 }
+
+            //             }
+            //         }
+            //     }
+            //     return output;
+            // }
+
+            //Version 2
+
+            let output = [];
+            let incrementArr = [];
+            for (let index = 0; index < inputArr.length; index++) {
+                output.push(new Array(inputArr.length).fill(0));
+            }
+            for (let outer = 0; outer < inputArr.length; outer++) {
+                for (let inner = 0; inner < inputArr[outer].length; inner++) {
+                    if (inputArr[outer][inner] === 'true') {
+                        incrementArr.push([outer - 1, inner - 1], [outer - 1, inner],
+                            [outer - 1, inner + 1], [outer, inner - 1],
+                            [outer, inner + 1], [outer + 1, inner - 1],
+                            [outer + 1, inner], [outer + 1, inner + 1], )
+
+                    }
+                }
+            }
+
+            for (let coordinate = 0; coordinate < incrementArr.length; coordinate++) {
+                if (incrementArr[coordinate].indexOf(-1) === -1 && incrementArr[coordinate].indexOf(inputArr.length) === -1) {
+                    output[incrementArr[coordinate][0]][incrementArr[coordinate][1]]++;
+                }
+            }
+
+            return output;
+        }
+
+        let sample = [['true', 'false', 'false', 'true'], ['false', 'true', 'false', 'false'], ['false', 'false', 'false', 'true'], ['true', 'false', 'true', 'false']];
+
+        console.log(minesweeper(sample));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
